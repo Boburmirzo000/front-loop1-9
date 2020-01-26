@@ -40,20 +40,25 @@ body{
   background-color: #f7cd75;
 }
 .payme-card{
-  max-width: 800px;
+  display: flex;
+  max-width: 900px;
   margin: 50px auto;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px black;
 }
 .wallets{
-  max-width: 300px;
+  width: 450px;
   height: 450px;
-  padding: 45px 40PX;
   overflow: auto;
+  padding: 45px 40px 10px;
   background-color: #f2f2f2;
 }
 .wallet-title{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
   margin-bottom: 45px;
 }
 .card-lists{
@@ -74,26 +79,32 @@ body{
   color: #444;
   font-weight: 500;
 }
+.card-link--mastercard{
+box-shadow: 0 0 0 2px blue;
+}
+.card-link:hover{
+box-shadow: 0 0 0 3px blue;
+}
 .card-link::before{
-position: absolute;
-top: 5px;
-left: 10px;
-display: block;
-width: 60px;
-height: 40px;
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
-content: "";
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  display: block;
+  width: 60px;
+  height: 40px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: "";
 }
 .card-link--visa::before{
-background-image: url("../img/visa.svg");
+  background-image: url("../img/visa.svg");
 }
 .card-link--mastercard::before{
   background-image: url("../img/mastercard.svg");
 }
 .card-link--maestro::before{
-background-image: url("../img/maestro.svg");
+  background-image: url("../img/maestro.svg");
 }
 .card-link::last-child{
   margin-bottom: 0;
@@ -101,4 +112,71 @@ background-image: url("../img/maestro.svg");
 .card-link p{
   padding: 0;
   margin: 0;
+}
+.balance{
+  width: 100%;
+  padding: 45px 40px 10px;
+  background-color: #fff;
+}
+.balance-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  margin: 0;
+  margin-bottom: 45px;
+  border-bottom: 1px solid #aaa;
+}
+.balance-heading{
+  margin: 0;
+}
+.transactions{
+  height: 256px;
+  overflow: auto;
+}
+.outcome{
+  position: relative;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 45px;
+  padding-left: 30px;
+}
+.outcome::before{
+position: absolute;
+top: 15px;
+left: 0;
+display: block;
+width: 15px;
+height: 15px;
+background-image: url("../img/minus.svg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+  content: "";
+}
+.income::before{
+  background-image: url("../img/plus.svg");
+}
+.outcome-heading{
+ margin: 0;
+ margin-bottom: 5px;
+ font-size: 21px;
+ color: #333;
+}
+.outcome-text{
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color:#666;
+}
+.outcome-balance{
+  color:#9daad0;
+  font-weight: 700;
+}
+.income-balance{
+  color:#b2df96;
+  font-weight: 700;
 }
